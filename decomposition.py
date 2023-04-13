@@ -44,10 +44,13 @@ print("get all file of the dir:")
 print("get tar_gz file and process")
 for My_file_name in files:
     print('正在解压文件：', My_file_name)
-    if My_file_name.find(".tar.gz") != -1:
-        # print(My_file_name)
-        un_tar(My_file_name, file_dir)
-    else:
-        pass
+    try:
+        if My_file_name.find(".tar.gz") != -1:
+            # print(My_file_name)
+            un_tar(My_file_name, file_dir)
+        else:
+            pass
+    except:
+        print('此文件出错' , My_file_name)
 
 
